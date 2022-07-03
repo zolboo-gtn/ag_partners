@@ -1,7 +1,9 @@
 import { MenuIcon } from "@heroicons/react/outline";
 import type { FC } from "react";
 
+import { drawerId } from "common/components";
 import { classNames, scrollToById } from "common/utils";
+import Link from "next/link";
 
 export const Header: FC = () => {
   return (
@@ -23,13 +25,11 @@ export const Header: FC = () => {
 
 export const MobileHeader: FC = () => {
   return (
-    <div
-      className={classNames("flex h-10 items-center bg-white p-5", "md:hidden")}
-    >
+    <div className={classNames("flex items-center bg-white", "md:hidden")}>
       <div className="flex w-[calc(50%-60px)] items-center">
-        <button>
+        <label htmlFor={drawerId} className="btn btn-ghost btn-square">
           <MenuIcon className="h-5 w-5" />
-        </button>
+        </label>
       </div>
       <Logo />
     </div>
@@ -38,7 +38,11 @@ export const MobileHeader: FC = () => {
 
 const Logo: FC = () => {
   return (
-    <div className="flex w-[120px] items-center justify-center">{`AUTOGARAGE`}</div>
+    <Link href="/">
+      <a className="flex w-[120px] items-center justify-center">
+        {`AUTOGARAGE`}
+      </a>
+    </Link>
   );
 };
 
