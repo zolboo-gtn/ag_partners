@@ -34,7 +34,7 @@ export const Navbar: FC<INavbar> = ({ current }) => {
   ];
 
   return (
-    <nav className="w-auto overflow-x-auto bg-blue-400 no-scrollbar">
+    <nav className="overflow-x-auto bg-blue-400 no-scrollbar">
       <ul className="flex h-10 min-w-max justify-center">
         {items.map(({ key, label, href, icon }) => (
           <li

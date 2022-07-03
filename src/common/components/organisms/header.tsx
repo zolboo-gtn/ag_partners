@@ -5,15 +5,17 @@ import { classNames, scrollToById } from "common/utils";
 
 export const Header: FC = () => {
   return (
-    <div className="container mx-auto bg-white">
-      <div
-        className={classNames(
-          "hidden h-10 items-center justify-between p-5",
-          "md:flex"
-        )}
-      >
-        <Logo />
-        <Menu />
+    <div className="bg-white">
+      <div className="container mx-auto">
+        <div
+          className={classNames(
+            "hidden h-10 items-center justify-between p-5",
+            "md:flex"
+          )}
+        >
+          <Logo />
+          <Menu />
+        </div>
       </div>
     </div>
   );
