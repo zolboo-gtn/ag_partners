@@ -1,31 +1,27 @@
-import { useId } from "react";
-import type { InputHTMLAttributes } from "react";
+import { TextareaHTMLAttributes } from "react";
 
 import { classNames } from "common/utils";
 
-interface ICustomInput {
+interface ICustomTextArea {
   error?: string;
   label?: string;
   value?: string;
   onChange?: (value: string) => void;
   onInput?: (value: string) => void;
 }
-export const CustomInput: React.FC<
-  Omit<InputHTMLAttributes<HTMLInputElement>, "onChange" | "onInput"> &
-    ICustomInput
+export const CustomTextArea: React.FC<
+  Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, "onChange" | "onInput"> &
+    ICustomTextArea
 > = ({ className, error, label, onChange, onInput, ...props }) => {
-  const id = useId();
-
   return (
     <div className={classNames("form-control", className)}>
       {label && (
-        <label className="label" htmlFor={id}>
+        <label className="label">
           <span className="label-text">{label}</span>
         </label>
       )}
-      <input
-        className="input input-bordered"
-        id={id}
+      <textarea
+        className="textarea textarea-bordered"
         onChange={(event) => {
           onChange && onChange(event.currentTarget.value);
         }}
