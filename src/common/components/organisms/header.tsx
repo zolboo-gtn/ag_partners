@@ -47,20 +47,22 @@ const Logo: FC = () => {
 };
 
 const Menu: FC = () => {
+  const items = [
+    {
+      key: "contactus",
+      value: "Contact us",
+      onClick: () => scrollToById("contact-form"),
+    },
+    {
+      key: "partners",
+      value: "Our partners",
+      onClick: () => scrollToById("our-partners"),
+    },
+  ];
+
   return (
     <ul className="flex gap-x-5">
-      {[
-        {
-          key: "contactus",
-          value: "Contact us",
-          onClick: () => scrollToById("contact-form"),
-        },
-        {
-          key: "partners",
-          value: "Our partners",
-          onClick: () => scrollToById("our-partners"),
-        },
-      ].map(({ key, value, onClick }) => (
+      {items.map(({ key, value, onClick }) => (
         <li key={key}>
           <button onClick={onClick}>{value}</button>
         </li>
