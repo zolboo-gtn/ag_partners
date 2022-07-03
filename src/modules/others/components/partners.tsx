@@ -4,14 +4,38 @@ import { classNames } from "common/utils";
 
 export const Partners: FC = () => {
   const items = [
-    "Partner",
-    "Partner",
-    "Partner",
-    "Partner",
-    "Partner",
-    "Partner",
-    "Partner",
-    "Partner",
+    {
+      key: "partner1",
+      value: "Partner 1",
+    },
+    {
+      key: "partner2",
+      value: "Partner 2",
+    },
+    {
+      key: "partner3",
+      value: "Partner 3",
+    },
+    {
+      key: "partner4",
+      value: "Partner 4",
+    },
+    {
+      key: "partner5",
+      value: "Partner 5",
+    },
+    {
+      key: "partner6",
+      value: "Partner 6",
+    },
+    {
+      key: "partner7",
+      value: "Partner 7",
+    },
+    {
+      key: "partner8",
+      value: "Partner 8",
+    },
   ];
 
   return (
@@ -24,10 +48,13 @@ export const Partners: FC = () => {
           "lg:grid-cols-4"
         )}
       >
-        {items.map((partner) => {
+        {items.map(({ key, value }) => {
           return (
-            <div className="flex h-[100px] w-full items-center justify-center  bg-gray-200">
-              {partner}
+            <div
+              key={key}
+              className="flex h-[100px] w-full items-center justify-center  bg-gray-200"
+            >
+              {value}
             </div>
           );
         })}

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { FCC } from "react";
 
 import { scrollToById } from "common/utils";
@@ -26,8 +25,8 @@ export const Drawer: FCC = ({ children }) => {
         <label htmlFor={id} className="drawer-overlay" />
         <ul className="menu w-80 overflow-y-auto bg-base-100 p-4 text-base-content">
           {items.map(({ key, value, onClick }) => (
-            <li>
-              <label key={key} htmlFor={id} onClick={onClick}>
+            <li key={key}>
+              <label htmlFor={id} onClick={onClick}>
                 {value}
               </label>
             </li>
