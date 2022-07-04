@@ -7,9 +7,11 @@ const HomePage: NextPageWithLayout = () => {
   return (
     <main>
       <Hero />
-      <div className="container mx-auto px-5">
-        <Partners />
-        <ContactForm />
+      <div className="container mx-auto">
+        <div className="flex flex-col gap-y-10 px-5">
+          <Partners />
+          <ContactForm />
+        </div>
       </div>
     </main>
   );

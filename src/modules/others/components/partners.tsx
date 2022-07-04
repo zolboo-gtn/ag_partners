@@ -39,7 +39,7 @@ export const Partners: FC = () => {
   ];
 
   return (
-    <div id="our-partners" className="flex flex-col items-center">
+    <div id="our-partners" className="flex flex-col items-center gap-y-5">
       <h2>{`Our Partners`}</h2>
       <div
         className={classNames(

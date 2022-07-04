@@ -1,10 +1,12 @@
 import { MailIcon, PhoneIcon } from "@heroicons/react/outline";
-import type { FC } from "react";
+import { FC, useState } from "react";
 
 import { CustomInput, CustomTextArea } from "common/components";
 import { classNames } from "common/utils";
 
 export const ContactForm: FC = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
     <div
       id="contact-form"
@@ -12,7 +14,7 @@ export const ContactForm: FC = () => {
     >
       {/* contact information */}
       <div className="md:col-span-1">
-        <h2>{`Contact information`}</h2>
+        <h3>{`Contact information`}</h3>
         <p>{`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`}</p>
         <div className="flex gap-x-2.5">
           <PhoneIcon className="h-6 w-6" />
@@ -25,7 +27,14 @@ export const ContactForm: FC = () => {
       </div>
       {/* Contact form */}
       <div className={classNames("md:col-span-2")}>
-        <form onSubmit={() => {}}>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            // mock loading
+            setIsLoading(true);
+            setTimeout(() => setIsLoading(false), 2000);
+          }}
+        >
           <div>
             <div className="grid grid-cols-2 gap-6">
               <CustomInput
@@ -57,7 +66,9 @@ export const ContactForm: FC = () => {
               />
             </div>
             <div className="py-5 text-right">
-              <button className="btn-glass btn">{`Submit`}</button>
+              <button
+                className={classNames("btn", isLoading && "loading")}
+              >{`Submit`}</button>
             </div>
           </div>
         </form>
