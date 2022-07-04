@@ -1,14 +1,15 @@
 import type { NextPageWithLayout } from "next";
 
 import { MainLayout } from "common/components";
-import { ContactForm, Hero, Partners } from "modules/others/components";
+import { Brands, ContactForm, Hero, Partners } from "modules/others/components";
 
 const HomePage: NextPageWithLayout = () => {
   return (
     <main>
       <Hero />
       <div className="container mx-auto">
-        <div className="flex flex-col gap-y-10 px-5">
+        <div className="my-10 flex flex-col gap-y-10 px-5">
+          <Brands />
           <Partners />
           <ContactForm />
         </div>

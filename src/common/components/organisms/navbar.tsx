@@ -15,19 +15,19 @@ export const Navbar: FC<INavbar> = ({ current }) => {
   const items = [
     {
       key: "shop",
-      label: "AUTOGARAGE Shop",
+      label: "GARAGE Shop",
       href: "/",
       icon: <BriefcaseIcon className="h-4 w-4" />,
     },
     {
       key: "partners",
-      label: "AUTOGARAGE Partners",
+      label: "GARAGE Partners",
       href: "/",
       icon: <CollectionIcon className="h-4 w-4" />,
     },
     {
       key: "club",
-      label: "AUTOGARAGE Club",
+      label: "GARAGE Club",
       href: "/",
       icon: <UsersIcon className="h-4 w-4" />,
     },

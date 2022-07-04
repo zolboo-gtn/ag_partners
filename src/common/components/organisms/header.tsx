@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const Header: FC = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-base-300">
       <div className="container mx-auto">
         <div
           className={classNames(
@@ -25,9 +25,9 @@ export const Header: FC = () => {
 
 export const MobileHeader: FC = () => {
   return (
-    <div className={classNames("flex items-center bg-white", "md:hidden")}>
+    <div className={classNames("flex items-center bg-base-300", "md:hidden")}>
       <div className="flex w-[calc(50%-60px)] items-center">
-        <label htmlFor={drawerId} className="btn btn-ghost btn-square">
+        <label htmlFor={drawerId} className="btn btn-square btn-ghost">
           <MenuIcon className="h-5 w-5" />
         </label>
       </div>
@@ -39,9 +39,7 @@ export const MobileHeader: FC = () => {
 const Logo: FC = () => {
   return (
     <Link href="/">
-      <a className="flex w-[120px] items-center justify-center">
-        {`AUTOGARAGE`}
-      </a>
+      <a className="flex w-[120px] items-center justify-center">{`GARAGE`}</a>
     </Link>
   );
 };
@@ -54,9 +52,14 @@ const Menu: FC = () => {
       onClick: () => scrollToById("contact-form"),
     },
     {
+      key: "brands",
+      value: "Brands",
+      onClick: () => scrollToById("brands"),
+    },
+    {
       key: "partners",
-      value: "Our partners",
-      onClick: () => scrollToById("our-partners"),
+      value: "Partners",
+      onClick: () => scrollToById("partners"),
     },
   ];
 

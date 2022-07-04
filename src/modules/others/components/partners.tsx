@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { FC } from "react";
 
 import { classNames } from "common/utils";
@@ -39,9 +40,12 @@ export const Partners: FC = () => {
   ];
 
   return (
-    <div id="our-partners" className="flex flex-col items-center gap-y-5">
-      <h2>{`Our Partners`}</h2>
-      <div
+    <div
+      id="partners"
+      className="flex flex-col items-center gap-y-5 rounded-md bg-base-300 px-5 py-10"
+    >
+      <h2>{`Partners`}</h2>
+      <ul
         className={classNames(
           "grid w-full grid-cols-2 gap-0.5",
           "md:grid-cols-3",
@@ -50,15 +54,16 @@ export const Partners: FC = () => {
       >
         {items.map(({ key, value }) => {
           return (
-            <div
-              key={key}
-              className="flex h-[100px] w-full items-center justify-center  bg-gray-200"
-            >
-              {value}
-            </div>
+            <li key={key}>
+              <Link href="/">
+                <a className="flex h-[100px] w-full items-center justify-center bg-base-200">
+                  {value}
+                </a>
+              </Link>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };

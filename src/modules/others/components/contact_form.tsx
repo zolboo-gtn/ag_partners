@@ -10,7 +10,10 @@ export const ContactForm: FC = () => {
   return (
     <div
       id="contact-form"
-      className={classNames("md:grid md:grid-cols-3 md:gap-6")}
+      className={classNames(
+        "rounded-md bg-base-300 px-5 py-10",
+        "md:grid md:grid-cols-3 md:gap-6"
+      )}
     >
       {/* contact information */}
       <div className="md:col-span-1">
